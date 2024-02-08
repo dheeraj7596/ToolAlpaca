@@ -1,0 +1,83 @@
+[
+    {
+        "Name": "Nager.Date",
+        "Description": "Public holidays for more than 90 countries",
+        "Category": "Calendar",
+        "Authentication": {},
+        "external_tools": [
+            "retrieval"
+        ],
+        "Documentation": "{}",
+        "NLDocumentation": "",
+        "Function_Description": {
+            "CountryCountryInfo": "Get country info for the given country\nParameters: {\"countryCode\": \"Required. string. Two-character represented country code. For instance, CN or cn represents China.\"}\nOutput: Success.\n - Format: text/plain\n - Structure: #CountryInfoDto",
+            "CountryAvailableCountries": "Get all available countries\nParameters: {}\nOutput: Success.\n - Format: text/plain\n - Structure: Array[#CountryV3Dto]",
+            "LongWeekendLongWeekend": "Get long weekends for a given country\nParameters: {\"year\": \"Required. integer. \", \"countryCode\": \"Required. string. Two-character represented country code. For instance, CN or cn represents China.\"}\nOutput: Success.\n - Format: text/plain\n - Structure: Array[#LongWeekendV3Dto]",
+            "PublicHolidayPublicHolidaysV3": "Get public holidays\nParameters: {\"year\": \"Required. integer. \", \"countryCode\": \"Required. string. Two-character represented country code. For instance, CN or cn represents China.\"}\nOutput: Public holidays.\n - Format: text/plain\n - Structure: Array[#PublicHolidayV3Dto]",
+            "PublicHolidayIsTodayPublicHoliday": "Is today a public holiday\nParameters: {\"countryCode\": \"Required. string. Two-character represented country code. For instance, CN or cn represents China.\", \"countyCode\": \"string. \", \"offset\": \"integer. utc timezone offset.\"}\nOutput: Today is a public holiday.\n - Format: \n - Structure:",
+            "PublicHolidayNextPublicHolidays": "Returns the upcoming public holidays for the next 365 days for the given country\nParameters: {\"countryCode\": \"Required. string. Two-character represented country code. For instance, CN or cn represents China.\"}\nOutput: Success.\n - Format: text/plain\n - Structure: Array[#PublicHolidayV3Dto]",
+            "PublicHolidayNextPublicHolidaysWorldwide": "Returns the upcoming public holidays for the next 7 days\nParameters: {}\nOutput: Success.\n - Format: text/plain\n - Structure: Array[#PublicHolidayV3Dto]",
+            "VersionGetVersion": "Get version of the used Nager.Date library\nParameters: {}\nOutput: Success.\n - Format: text/plain\n - Structure: #VersionInfoDto",
+            "components": "The detailed output format for the tools is outlined below:\n#CountryInfoDto: Object{commonName, officialName, countryCode, region, borders: Array[#CountryInfoDto]}\n#CountryV3Dto: Object{countryCode, name}\n#LongWeekendV3Dto: Object{startDate, endDate, dayCount, needBridgeDay}\n#PublicHolidayType: \n#PublicHolidayV3Dto: Object{date, localName, name, countryCode, fixed, global, counties: Array[string], launchYear, types: Array[#PublicHolidayType]}\n#VersionInfoDto: Object{name, version}"
+        },
+        "Function_Projection": {
+            "CountryCountryInfo": [
+                "/api/v3/CountryInfo/{countryCode}",
+                "get"
+            ],
+            "CountryAvailableCountries": [
+                "/api/v3/AvailableCountries",
+                "get"
+            ],
+            "LongWeekendLongWeekend": [
+                "/api/v3/LongWeekend/{year}/{countryCode}",
+                "get"
+            ],
+            "PublicHolidayPublicHolidaysV3": [
+                "/api/v3/PublicHolidays/{year}/{countryCode}",
+                "get"
+            ],
+            "PublicHolidayIsTodayPublicHoliday": [
+                "/api/v3/IsTodayPublicHoliday/{countryCode}",
+                "get"
+            ],
+            "PublicHolidayNextPublicHolidays": [
+                "/api/v3/NextPublicHolidays/{countryCode}",
+                "get"
+            ],
+            "PublicHolidayNextPublicHolidaysWorldwide": [
+                "/api/v3/NextPublicHolidaysWorldwide",
+                "get"
+            ],
+            "VersionGetVersion": [
+                "/api/v3/Version",
+                "get"
+            ]
+        },
+        "Instructions": [
+            "Can you check if today is a public holiday in China?",
+            "Get the country info for China.",
+            "Get the list of all available countries for public holiday information."
+        ],
+        "Golden_Answers": [
+            [
+                {
+                    "Action": "PublicHolidayIsTodayPublicHoliday",
+                    "Action_Input": "{\"countryCode\": \"CN\"}"
+                }
+            ],
+            [
+                {
+                    "Action": "CountryCountryInfo",
+                    "Action_Input": "{\"countryCode\": \"CN\"}"
+                }
+            ],
+            [
+                {
+                    "Action": "CountryAvailableCountries",
+                    "Action_Input": "{}"
+                }
+            ]
+        ]
+    }
+]

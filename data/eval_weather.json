@@ -1,0 +1,142 @@
+[
+    {
+        "Name": "Weather",
+        "Description": "Weather information",
+        "Category": "Weather",
+        "Authentication": {},
+        "external_tools": [
+            "retrieval"
+        ],
+        "Documentation": "{}",
+        "NLDocumentation": "",
+        "Function_Description": {
+            "Forecast Air Pollution": "Get the future air pollution data in location with latitude, longitude\nParameters: {\"lat\": \"Required. string. Latitude of the location\", \"lon\": \"Required. string. Longitude of the location.\"}",
+            "Current Air Pollution": "Get the current air pollution data in location with latitude, longitude\nParameters: {\"lat\": \"Required. string. Latitude of the location\", \"lon\": \"Required. string. Longitude of the location.\"}",
+            "Geographical Coordinates": "Get up to {k} geographical coordinates of locations named {city_name}\nParameters: {\"k\": \"Optional. integer. Number of the locations in the API response\", \"city_name\": \"Required. string. City name.\"}",
+            "Current Weather City": "Get the current weather data in {city}. \nParameters:{\"city\": \"Required. string. City name.\", \"units\": \"optional. string. Units of measurement. 'standard' (default), 'metric' and 'imperial' units are available.\", \"mode\": \"optional. string. Response format. 'JSON' format is used by default. To get data in 'XML' format use mode=xml.\", \"lang\": \"optional. string. You can use the lang parameter to get the output in your language. 'en' for English (default); 'fr' for French; 'zh_cn' for simplified Chinese; 'it' for Italian; 'de' for German; 'ru' for Russian; 'ja' for Japanese; 'nl' for Dutch.\"}",
+            "Forecast Weather City": "Get the future weather data in {city}. \nParameters:{\"city\": \"Required. string. City name.\", \"units\": \"optional. string. Units of measurement. 'standard' (default), 'metric' and 'imperial' units are available.\", \"mode\": \"optional. string. Response format. 'JSON' format is used by default. To get data in 'XML' format use mode=xml.\", \"lang\": \"optional. string. You can use the lang parameter to get the output in your language. 'en' for English (default); 'fr' for French; 'zh_cn' for simplified Chinese; 'it' for Italian; 'de' for German; 'ru' for Russian; 'ja' for Japanese; 'nl' for Dutch.\"}",
+            "Forecast Weather Latitude Longitude": "Get the future weather data in location with latitude={lat}, longitude={lon}\nParameters:{\"lat\": \"Required. string. Latitude of the location\", \"lon\": \"Required. string. Longitude of the location.\", \"units\": \"optional. string. Units of measurement. 'standard' (default), 'metric' and 'imperial' units are available.\", \"mode\": \"optional. string. Response format. 'JSON' format is used by default. To get data in 'XML' format use mode=xml.\", \"lang\": \"optional. string. You can use the lang parameter to get the output in your language. 'en' for English (default); 'fr' for French; 'zh_cn' for simplified Chinese; 'it' for Italian; 'de' for German; 'ru' for Russian; 'ja' for Japanese; 'nl' for Dutch.\"}",
+            "Current Weather Latitude Longitude": "Get the current weather data in location with latitude={lat}, longitude={lon}\nParameters:{\"lat\": \"Required. string. Latitude of the location\", \"lon\": \"Required. string. Longitude of the location.\", \"units\": \"optional. string. Units of measurement. 'standard' (default), 'metric' and 'imperial' units are available.\", \"mode\": \"optional. string. Response format. 'JSON' format is used by default. To get data in 'XML' format use mode=xml.\", \"lang\": \"optional. string. You can use the lang parameter to get the output in your language. 'en' for English (default); 'fr' for French; 'zh_cn' for simplified Chinese; 'it' for Italian; 'de' for German; 'ru' for Russian; 'ja' for Japanese; 'nl' for Dutch.\"}",
+            "Forecast Weather Zipcode": "Get the future weather data in {zip} area\nParameters:{\"zip\": \"Required. string. Zip code\", \"units\": \"optional. string. Units of measurement. 'standard' (default), 'metric' and 'imperial' units are available.\", \"mode\": \"optional. string. Response format. 'JSON' format is used by default. To get data in 'XML' format use mode=xml.\", \"lang\": \"optional. string. You can use the lang parameter to get the output in your language. 'en' for English (default); 'fr' for French; 'zh_cn' for simplified Chinese; 'it' for Italian; 'de' for German; 'ru' for Russian; 'ja' for Japanese; 'nl' for Dutch.\"}",
+            "Current Weather Zipcode": "Get the current weather data in {zip} area\nParameters:{\"zip\": \"Required. string. Zip code\", \"units\": \"optional. string. Units of measurement. 'standard' (default), 'metric' and 'imperial' units are available.\", \"mode\": \"optional. string. Response format. 'JSON' format is used by default. To get data in 'XML' format use mode=xml.\", \"lang\": \"optional. string. You can use the lang parameter to get the output in your language. 'en' for English (default); 'fr' for French; 'zh_cn' for simplified Chinese; 'it' for Italian; 'de' for German; 'ru' for Russian; 'ja' for Japanese; 'nl' for Dutch.\"}",
+            "Delete image from favorites": "Delete the image with id {image_id} from the list of favorites\nParameters: {\"image_id\": \"Required. string. the id of the image\"}",
+            "Find images": "Search for cat images, with optional requirements: image size, image type, search order, number of results, and cat breeds\nParameters: {\"size\": \"optional. string. The size of image to return - 'small', 'med' or 'full'. Defaults to 'med'.\", \"mime_types\": \"optional. Comma delimited string of the image types to return 'gif', 'jpg', or 'png'. Defaults to return all types 'jpg,gif,png'.\", \"order\": \"optional. The order to return results in. 'RANDOM', 'ASC' or 'DESC'. Default is 'RANDOM'.\", \"limit\": \"optional Integer. number of results to return. You can pass up to 25. Default is 1.\", \"breeds\": optional. Comma delimited string of breed abbreviations.\"}",
+            "Get favorite cat images": "Get the list of favorite cat images.\nParameters:{}",
+            "Post to favorites": "Add the image with id {image_id} to the list of favorites\nParameters: {\"image_id\": \"Required. string. the id of the image\"}",
+            "Vote down": "Vote down the image with id {image_id}\nParameters: {\"image_id\": \"Required. string. the id of the image\"}",
+            "Vote up": "Vote up the image with id {image_id}\nParameters: {\"image_id\": \"Required. string. the id of the image\"}",
+            "Booking": "Make a travel or hotel booking.\nParameters: {\"booking_type\": \"Required. string. The parameter 'booking_type' allows users to choose between different booking types, including 'hotels', 'trip tickets', or both simultaneously.\", \"means_of_transportation\": \"Required. string. The parameter 'means_of_transportation' allows users to choose a transportation type from options including 'flight', 'train', 'bus', or 'cruise'. The default transportation_type is set to 'None' if no specific transportation type is specified.\", \"location_from\": \"Required. string. The 'location_from' parameter specifies the departure location. The default \"location_from\" value is set to 'None' if no origin is specified or if the user is not booking a travel ticket.\", \"location_to\": \"Required. string. The 'location_to' parameter allows you to specify the arrival location. The default \"location_to\" value is set to 'None' if no destination is specified or if the user is not booking a travel ticket.\", \"min_price_ticket\": \"Required. string. The parameter 'min_price_ticket' is used to establish the minimum price at which the user wants to buy tickets for. The default minimum price is set to 'None' if nothing is specified.\", \"max_price_ticket\": \"Required. string. The parameter 'max_price_ticket' is used to establish the maximum price at which the user wants to buy tickets for. The default maximum price is set to 'None' if nothing is specified.\", \"num_adults\": \"Required. string. The parameter 'num_adults' represents the number of adults. The default number of adults is set to 'None' if nothing is specified.\", \"num_children\": \"Required. string. The parameter 'num_children' represents the number of children. The default number of children is set to 'None' if nothing is specified.\", \"departure_date\": \"Required. string. The 'departure_date' parameter represents the departure date for a trip when booking trip tickets. This must be in Date(date, month, year) format. The default departure date is set to 'None' if nothing is specified.\", \"return_date\": \"Required. string. The 'return_date' parameter allows the user to specify the return date for a trip. This must be in Date(date, month, year) format. The default return date is set to 'None' if nothing is specified.\", \"location\": \"Required. string. The 'location' parameter is to set the location for the search area. The default hotel location is set to 'None' if nothing is specified.\", \"checkin_date\": \"Required. string. The parameter 'checkin_date' is used to establish the date for checking into a hotel. This must be in Date(date, month, year) format. The default checkin date is set to 'None' if nothing is specified or if the user is not booking a hotel.\", \"checkout_date\": \"Required. string. The parameter 'checkout_date' is used to establish the date for checking out of a hotel. This must be in Date(date, month, year) format. The default checkout date is set to 'None' if nothing is specified or if the user is not booking a hotel.\", \"num_rooms\": \"Required. string. The parameter 'num_rooms' allows users to specify the number of hotel rooms they intend to book. The default number of rooms is set to 'None' if nothing is specified or if the user is not booking a hotel.\", \"room_type\": \"Required. string. The parameter 'room_type' allows users to choose the type of hotel room they prefer from a selection that includes 'King Bed', 'Queen Bed', 'Double', and 'Luxury'. The default room type is set to 'None' if nothing is specified or if the user is not booking a hotel.\", \"min_price_room\": \"The parameter 'min_price_room' allows for establishing the minimum price for hotel rooms. The default minimum room price is set to 'None' if nothing is specified or if the user is not booking a hotel.\", \"max_price_room\": \"Required. string. The parameter 'max_price_room' allows for establishing the maximum price for hotel rooms. The default maximum room price is set to 'None' if nothing is specified or if the user is not booking a hotel.\"}",
+            "Home search": "Search homes for buying or renting.\nParameters: {\"location\": \"Required. string. The 'location' parameter is to set the location for the search area. The default hotel location is set to 'None' if nothing is specified.\", \"home_type\": \"Required. string. The 'home_type' parameter represents home types for search. For home buying, home_types choices are: 'House', 'Townhouse', 'Condo', 'Land', 'Multi-family', 'Mobile', 'Co-op'; for home renting, home_types choices are: 'House', 'Townhouse', 'Condo', 'Apartment'. The default select_home_type is set to 'None' if nothing is specified.\", \"buy_or_rent\": \"Required. string. The 'buy_or_rent' parameter is to specify whether to search homes for buying or renting. It can be chosen from 'buy' or 'rent'.\", \"floor_number\": \"Required. string. The 'floor_number' parameter represents the floor number. The default floor_number is set to 'None' if nothing is specified.\", \"max_commute_time\": \"Required. string. The 'max_commute_time' parameter represents the maximum commute time in minute to office location, assuming the office location is already defined. The default max_commute_time is set to 'None' if nothing is specified.\", \"max_price\": \"Required. string. The 'max_price' parameter represents the maximum home price in dollars. The default max_price is set to 'None' if nothing is specified.\", \"max_square_feet\": \"Required. string. The 'max_square_feet' parameter represents the maximum home size in square feet. The default max_square_feet is set to 'None' if nothing is specified.\", \"min_price\": \"Required. string. The 'min_price' parameter represents the minimum home price in dollars. The default min_price is set to 'None' if nothing is specified.\", \"min_square_feet\": \"Required. string. The 'min_square_feet' parameter represents the minimum home size in square feet. The default min_square_feet is set to 'None' if nothing is specified.\", \"num_balconies\": \"Required. string. The 'num_balconies' parameter represents the number of balconies. The default num_balconies is set to 'None' if nothing is specified.\", \"num_baths\": \"Required. string. The 'num_baths' parameter represents the number of bathrooms. The default num_baths is set to 'None' if nothing is specified.\", \"num_beds\": \"Required. string. The 'num_beds' parameter represents the number of bedrooms. The default num_beds is set to 'None' if nothing is specified.\", \"num_garages\": \"Required. string. The 'num_garages' parameter represents the number of garages. The default num_garages is set to 'None' if nothing is specified.\", \"num_swimming_pools\": \"Required. string. The 'num_swimming_pools' parameter represents the number of swimming pools. The default num_swimming_pools is set to 'None' if nothing is specified.\"}",
+            "components": "The detailed output format for the tools is outlined below:\n#CountryInfoDto: Object{commonName, officialName, countryCode, region, borders: Array[#CountryInfoDto]}\n#CountryV3Dto: Object{countryCode, name}\n#LongWeekendV3Dto: Object{startDate, endDate, dayCount, needBridgeDay}\n#PublicHolidayType: \n#PublicHolidayV3Dto: Object{date, localName, name, countryCode, fixed, global, counties: Array[string], launchYear, types: Array[#PublicHolidayType]}\n#VersionInfoDto: Object{name, version}"
+        },
+        "Function_Projection": {
+            "Forecast Air Pollution": [
+                "/api.openweathermap.org/data/2.5/air_pollution/forecast?lat={lat}&lon={lon}&appid={API_KEY}'",
+                "get"
+            ],
+            "Current Air Pollution": [
+                "/api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={API_KEY}'",
+                "get"
+            ],
+            "Geographical Coordinates": [
+                "/api.openweathermap.org/geo/1.0/direct?q={city_name}&limit={k}&appid={API_KEY}'",
+                "get"
+            ],
+            "Current Weather City": [
+                "curl -X GET 'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units={units}&mode={mode}&lang={lang}'",
+                "get"
+            ],
+            "Forecast Weather City": [
+                "curl -X GET 'https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_KEY}&units={units}&mode={mode}&lang={lang}'",
+                "get"
+            ],
+            "Forecast Weather Latitude Longitude": [
+                "curl -X GET 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API_KEY}&units={units}&mode={mode}&lang={lang}'",
+                "get"
+            ],
+            "Current Weather Latitude Longitude": [
+                "curl -X GET 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units={units}&mode={mode}&lang={lang}'",
+                "get"
+            ],
+            "Forecast Weather Zipcode": [
+                "curl -X GET 'https://api.openweathermap.org/data/2.5/forecast?zip={zip}&appid={API_KEY}&units={units}&mode={mode}&lang={lang}'",
+                "get"
+            ],
+            "Current Weather Zipcode": [
+                "curl -X GET 'https://api.openweathermap.org/data/2.5/weather?zip={zip}&appid={API_KEY}&units={units}&mode={mode}&lang={lang}'",
+                "get"
+            ],
+            "Delete image from favorites": [
+                "curl -X DELETE 'https://api.thecatapi.com/v1/favourites/{image_id}'",
+                "get"
+            ],
+            "Find images": [
+                "curl -X GET 'https://api.thecatapi.com/v1/images/search?{optional_params}'",
+                "get"
+            ],
+            "Get favorite cat images": [
+                "curl -X GET 'https://api.thecatapi.com/v1/favourites'",
+                "get"
+            ],
+            "Post to favorites": [
+                "curl -X POST 'https://api.thecatapi.com/v1/favourites' --data '{\"image_id\":\"{image_id}\"}'",
+                "post"
+            ],
+            "Vote down": [
+                "curl -X POST 'https://api.thecatapi.com/v1/votes' --data '{\"image_id\":\"{image_id}\", \"value\":-1}'",
+                "post"
+            ],
+            "Vote up": [
+                "curl -X POST 'https://api.thecatapi.com/v1/votes' --data '{\"image_id\":\"{image_id}\", \"value\":1}'",
+                "post"
+            ],
+            "Booking": [
+                "API.select_booking_type({booking_type})\nAPI.select_transportation({means_of_transportation})\nlocation_from = Loc({location_from})\nAPI.set_origin(location_from)\nlocation_to = Loc({location_to})\nAPI.set_destination(location_to)\nAPI.set_min_ticket_price({min_price_ticket})\nAPI.set_max_ticket_price({max_price_ticket})\nAPI.set_num_adults({num_adults})\nAPI.set_num_children({num_children})\nAPI.set_departure_date({departure_date})\nAPI.set_return_date({return_date})\nhotel_location = Loc({location})\nAPI.set_hotel_location(hotel_location)\ncheckin_date = {checkin_date}\nAPI.set_checkin_date(checkin_date)\ncheckout_date = {checkout_date}\nAPI.set_checkout_date(checkout_date)\nAPI.set_num_rooms({num_rooms})\nAPI.select_room_type({room_type})\nAPI.set_min_room_price({min_price_room})\nAPI.set_max_room_price({max_price_room})\nAPI.search()",
+                "post"
+            ],
+            "Home search": [
+                "API.set_location({location})\nAPI.set_buy_or_rent({buy_or_rent})\nAPI.set_min_price({min_price})\nAPI.set_max_price({max_price})\nAPI.set_num_beds({num_beds})\nAPI.set_num_baths({num_baths})\nAPI.select_home_type({home_type})\nAPI.set_min_square_feet({min_square_feet})\nAPI.set_max_square_feet({max_square_feet})\nAPI.set_num_garages({num_garages})\nAPI.set_num_swimming_pools({num_swimming_pools})\nAPI.set_floor_number({floor_number})\nAPI.set_max_commute_time({max_commute_time})\nAPI.set_num_balconies({num_balconies})\nAPI.search()",
+                "post"
+            ]
+        },
+        "Instructions": [
+            "How's the air quality looking this week at the place with latitude 22.1 and longitute -128.7?",
+            "What's the current air pollution level at the location with longitute -107.6 and latitude -75.4?",
+            "How is the weather now in Cape Coral? I'd like German response in standard units and json format.",
+            "Vote up the image with id ar8.",
+            "Find me 6 images of cats in breed pixi, crex, bsho or asho. Return images in med size, ascending order and gif MIME type."
+        ],
+        "Golden_Answers": [
+            [
+                {
+                    "Action": "Forecast Air Pollution",
+                    "Action_Input": "{\"lat\": \"22.1\", \"lon\": \"-128.7\"}"
+                }
+            ],
+            [
+                {
+                    "Action": "Current Air Pollution",
+                    "Action_Input": "{\"lat\": \"-75.4\", \"lon\": \"-107.6\"}"
+                }
+            ],
+            [
+                {
+                    "Action": "Current Weather City",
+                    "Action_Input": "{\"city\": \"cape+coral\", \"mode\": \"json\", \"units\": \"standard\", \"lang\": \"de\"}"
+                }
+            ],
+            [
+                {
+                    "Action": "Vote up",
+                    "Action_Input": "{\"image_id\":\"ar8\"}"
+                }
+            ],
+            [
+                {
+                    "Action": "Find images",
+                    "Action_Input": "{\"size\": \"med\", \"mime_types\": \"gif\", \"order\": \"ASC\", \"limit\": 6, \"breeds\": \"pixi,crex,bsho,asho\"}"
+                }
+            ]
+        ]
+    }
+]
